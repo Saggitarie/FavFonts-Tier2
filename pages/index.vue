@@ -1,6 +1,8 @@
 <template>
   <div class="container">
     <div>
+      <!-- <img src="~/assets/images/svg/SearchIcon.svg" /> -->
+      <SearchIcon />
       <Logo />
       <h1 class="title">googlefonts</h1>
       <div class="links">
@@ -26,7 +28,12 @@
 </template>
 
 <script>
-export default {}
+import SearchIcon from '~/assets/images/svg/SearchIcon.svg?inline'
+export default {
+  components: {
+    SearchIcon,
+  },
+}
 </script>
 
 <style>
