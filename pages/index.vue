@@ -3,7 +3,6 @@
     <div>
       <!-- <img src="~/assets/images/svg/SearchIcon.svg" /> -->
       <SearchIcon />
-      <Logo />
       <h1 class="title">googlefonts</h1>
       <div class="links">
         <a
@@ -32,6 +31,9 @@ import SearchIcon from '~/assets/images/svg/SearchIcon.svg?inline'
 export default {
   components: {
     SearchIcon,
+  },
+  mounted() {
+    console.log(process.env.GOOGLE_FONTS_API_KEY)
   },
 }
 </script>
