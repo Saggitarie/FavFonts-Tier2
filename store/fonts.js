@@ -1,9 +1,11 @@
-const state = {
+const state = () => ({
   fontList: [],
-}
+  searchResult: [],
+})
 
 const getters = {
   allFonts: (state) => state.fontList,
+  allSearchResult: (state) => state.searchResult,
 }
 
 const mutations = {
@@ -24,7 +26,7 @@ const actions = {
 
 module.exports = {
   state,
+  getters,
   mutations,
   actions,
-  getters,
 }
