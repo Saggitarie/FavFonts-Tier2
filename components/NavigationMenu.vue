@@ -1,0 +1,9 @@
+<template>
+  <div>NavigationMenu</div>
+</template>
+
+<script>
+export default {}
+</script>
+
+<style scoped></style>
