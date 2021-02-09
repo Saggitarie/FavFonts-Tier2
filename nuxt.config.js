@@ -30,8 +30,14 @@ export default {
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
     '@nuxtjs/dotenv',
+    '@nuxtjs/style-resources',
   ],
-
+  styleResources: {
+    scss: [
+      './assets/styles/abstracts/_variables.scss',
+      './assets/styles/abstracts/_mixins.scss',
+    ],
+  },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/style-resources',

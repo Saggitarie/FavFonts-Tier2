@@ -3,22 +3,14 @@
 // 1. Configuration and helpers
 @import 'abstracts/variables', 'abstracts/functions', 'abstracts/mixins';
 
-// 2. Vendors
-@import 'vendors/normalize';
-
-// 3. Base stuff
+// 2. Base stuff
 @import 'base/base', 'base/fonts', 'base/typography', 'base/helpers';
 
-// 4. Layout-related sections
+// 3. Layout-related sections
 @import 'layout/header', 'layout/footer';
 
-// 5. Components
-// @import 'components/movielistrows';
-// @import 'components/button';
-// @import 'components/input';
-
-// 6. Page-specific styles
+// 4. Page-specific styles
 @import 'pages/home';
 
-// 7. Themes
+// 5. Themes
 @import 'themes/default';
