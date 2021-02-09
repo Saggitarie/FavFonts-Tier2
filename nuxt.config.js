@@ -33,7 +33,12 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/style-resources', '@nuxtjs/svg'],
+  modules: [
+    '@nuxtjs/style-resources',
+    '@nuxtjs/svg',
+    '@nuxt/http',
+    '@nuxtjs/axios',
+  ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},

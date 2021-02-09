@@ -1,9 +1,14 @@
-export const state = () => ({
+const state = () => ({
   counter: 0,
 })
 
-export const mutations = {
+const mutations = {
   increment(state) {
     state.counter++
   },
+}
+
+module.exports = {
+  state,
+  mutations,
 }

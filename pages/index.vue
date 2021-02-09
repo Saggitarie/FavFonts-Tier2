@@ -1,7 +1,6 @@
 <template>
   <div class="container">
     <div>
-      <!-- <img src="~/assets/images/svg/SearchIcon.svg" /> -->
       <SearchIcon />
       <h1 class="title">googlefonts</h1>
       <div class="links">
@@ -27,13 +26,27 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import SearchIcon from '~/assets/images/svg/SearchIcon.svg?inline'
+
 export default {
   components: {
     SearchIcon,
   },
-  mounted() {
-    console.log(process.env.GOOGLE_FONTS_API_KEY)
+  data() {
+    return {
+      list: [],
+    }
+  },
+  created() {
+    this.$nextTick(function () {
+      this.fetchAllFonts()
+    })
+  },
+  methods: {
+    ...mapActions('fonts', {
+      fetchAllFonts: 'fetchAllFonts',
+    }),
   },
 }
 </script>
