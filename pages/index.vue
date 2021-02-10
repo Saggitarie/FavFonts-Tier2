@@ -1,19 +1,20 @@
 <template>
   <div class="container">
     <div>
-      <h1 class="test">test</h1>
-      <SearchIcon />
+      <NavigationMenu />
+      <!-- <SearchIcon /> -->
     </div>
   </div>
 </template>
 
 <script>
 import { mapActions } from 'vuex'
-import SearchIcon from '~/assets/images/svg/SearchIcon.svg?inline'
+import NavigationMenu from '../components/NavigationMenu'
+// import SearchIcon from '~/assets/images/svg/SearchIcon.svg?inline'
 
 export default {
   components: {
-    SearchIcon,
+    NavigationMenu,
   },
   data() {
     return {

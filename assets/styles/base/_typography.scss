@@ -1,6 +1,33 @@
 /**
  * Basic typography style for copy text
  */
+
+// Open Sans (For Navigation Right)
+@font-face {
+  font-family: 'OpenSans Regular';
+  font-style: normal;
+  src: url('~assets/fonts/OpenSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'OpenSans Bold';
+  font-style: bold;
+  src: url('~assets/fonts/OpenSans-Bold.ttf') format('truetype');
+}
+
+// Product Sans (For Navigation Left)
+@font-face {
+  font-family: 'ProductSans Regular';
+  font-style: normal;
+  src: url('~assets/fonts/Product_Sans_Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'ProductSans Bold';
+  font-style: normal;
+  src: url('~assets/fonts/Product_Sans_Bold.ttf') format('truetype');
+}
+
 body {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
