@@ -28,6 +28,25 @@
   src: url('~assets/fonts/Product_Sans_Bold.ttf') format('truetype');
 }
 
+// Robot (For Navigation Left)
+@font-face {
+  font-family: 'Robot Regular';
+  font-style: normal;
+  src: url('~assets/fonts/Roboto-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Robot Black';
+  font-style: normal;
+  src: url('~assets/fonts/Roboto-Black.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Robot Bold';
+  font-style: normal;
+  src: url('~assets/fonts/Roboto-Bold.ttf') format('truetype');
+}
+
 body {
   font-family: 'Lato', sans-serif;
   font-weight: 400;

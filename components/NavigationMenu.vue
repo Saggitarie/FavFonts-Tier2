@@ -1,5 +1,5 @@
 <template>
-  <div class="navigation">
+  <div class="navigation u-margin-bottom-medium">
     <div class="navigation--left">
       <div class="navigation--left__img-container">
         <img
@@ -54,6 +54,8 @@ export default {
   border: 1px solid $color-light-grey;
 
   height: 85px;
+
+  transition: transform 1s;
 
   &--left {
     font-family: 'ProductSans Regular';
