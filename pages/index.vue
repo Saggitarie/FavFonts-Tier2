@@ -2,6 +2,7 @@
   <div class="container">
     <div>
       <NavigationMenu />
+      <FontCardGroup />
       <!-- <SearchIcon /> -->
     </div>
   </div>
@@ -10,11 +11,13 @@
 <script>
 import { mapActions } from 'vuex'
 import NavigationMenu from '../components/NavigationMenu'
+import FontCardGroup from '../components/FontCardGroup'
 // import SearchIcon from '~/assets/images/svg/SearchIcon.svg?inline'
 
 export default {
   components: {
     NavigationMenu,
+    FontCardGroup,
   },
   data() {
     return {

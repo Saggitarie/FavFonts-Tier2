@@ -1,5 +1,5 @@
 <template>
-  <div class="navigation">
+  <div class="navigation u-margin-bottom-medium">
     <div class="navigation--left">
       <div class="navigation--left__img-container">
         <img
