@@ -55,8 +55,6 @@ export default {
 
   height: 85px;
 
-  transition: transform 1s;
-
   &--left {
     font-family: 'ProductSans Regular';
 
