@@ -1,8 +1,8 @@
 <template>
   <div>
     <SampleTextSelect
-      :options="['go', 'python', 'rust', 'javascript']"
-      :default="'go'"
+      :options="['Custom', 'Sentence', 'Alphabet', 'Paragraph', 'Numerals']"
+      :default="'Sentence'"
       class="select"
     />
     <FontSizeSelect />
