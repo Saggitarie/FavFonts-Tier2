@@ -2,8 +2,9 @@
   <div class="container">
     <div>
       <NavigationMenu />
-      <FontCardGroup />
       <MainMenu />
+      <SortMenu />
+      <FontCardGroup />
       <!-- <SearchIcon /> -->
     </div>
   </div>
@@ -14,6 +15,7 @@ import { mapActions } from 'vuex'
 import NavigationMenu from '../components/NavigationMenu'
 import FontCardGroup from '../components/FontCardGroup'
 import MainMenu from '../components/MainMenu'
+import SortMenu from '../components/SortMenu'
 // import SearchIcon from '~/assets/images/svg/SearchIcon.svg?inline'
 
 export default {
@@ -21,6 +23,7 @@ export default {
     NavigationMenu,
     FontCardGroup,
     MainMenu,
+    SortMenu,
   },
   data() {
     return {
