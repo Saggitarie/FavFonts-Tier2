@@ -1,5 +1,5 @@
 <template>
-  <div class="mainmenu u-margin-bottom-medium">
+  <div class="mainmenu u-margin-bottom-big">
     <div class="mainmenu__search">
       <div class="mainmenu__search__icon">
         <SearchIcon />
@@ -91,7 +91,7 @@ export default {
   flex-direction: row;
 
   justify-content: space-between;
-  margin: 0 5rem;
+  margin: 0 5rem 3rem 5rem;
   padding: 0.5rem 1rem;
   border-radius: 30px;
 
@@ -164,6 +164,8 @@ export default {
 
     justify-content: center;
     flex: 0.2;
+
+    cursor: pointer;
 
     &__iconitself {
       color: $color-grey-dark;
