@@ -20,8 +20,9 @@
 export default {
   props: {
     value: {
-      type: Number,
+      type: String,
       required: true,
+      default: '40',
     },
     min: {
       type: Number,
