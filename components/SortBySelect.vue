@@ -1,7 +1,7 @@
 <template>
   <div class="custom-select" :tabindex="tabindex" @blur="open = false">
     <div class="selected" :class="{ open: open }" @click="open = !open">
-      {{ selected }}px
+      Sort By: {{ selected }}
     </div>
     <div class="items" :class="{ selectHide: !open }">
       <div

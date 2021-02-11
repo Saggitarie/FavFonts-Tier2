@@ -5,7 +5,25 @@
       :default="'Sentence'"
       class="select"
     />
-    <FontSizeSelect />
+
+    <FontSizeSelect
+      :options="[
+        '8',
+        '12',
+        '14',
+        '20',
+        '24',
+        '32',
+        '40',
+        '64',
+        '96',
+        '120',
+        '184',
+        '280',
+      ]"
+      :default="'40'"
+      class="select"
+    />
     <FontSizeSlider v-model="number" :min="0" :max="300" class="slider" />
   </div>
 </template>
