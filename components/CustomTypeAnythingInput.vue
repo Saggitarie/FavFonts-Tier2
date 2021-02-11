@@ -34,6 +34,8 @@ export default {
 
     border: none;
 
+    width: 20rem;
+
     &:focus {
       outline: none;
 

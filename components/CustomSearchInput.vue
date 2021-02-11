@@ -33,6 +33,7 @@ export default {
     font-family: 'Roboto Regular';
 
     border: none;
+    width: 25rem;
 
     &:focus {
       outline: none;
