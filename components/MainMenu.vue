@@ -6,7 +6,7 @@
       class="select"
     />
     <FontSizeSelect />
-    <FontSizeSlider />
+    <FontSizeSlider v-model="number" :min="0" :max="300" class="slider" />
   </div>
 </template>
 
