@@ -107,6 +107,8 @@ export default {
       width: 160px;
       display: flex;
 
+      cursor: pointer;
+
       color: $color-navigation-active;
 
       border-bottom: 2px solid $color-navigation-active;
@@ -126,6 +128,8 @@ export default {
       width: 160px;
       display: flex;
 
+      cursor: pointer;
+
       & > p {
         margin: auto;
       }
@@ -141,6 +145,8 @@ export default {
       width: 160px;
       display: flex;
 
+      cursor: pointer;
+
       & > p {
         margin: auto;
       }
@@ -155,6 +161,8 @@ export default {
       height: 100%;
       width: 160px;
       display: flex;
+
+      cursor: pointer;
 
       & > p {
         margin: auto;
@@ -172,6 +180,8 @@ export default {
     width: 160px;
     display: flex;
 
+    cursor: pointer;
+
     & > svg {
       margin: auto;
     }
@@ -186,6 +196,8 @@ export default {
     height: 100%;
     width: 160px;
     display: flex;
+
+    cursor: pointer;
 
     & > svg {
       margin: auto;

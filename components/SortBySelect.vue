@@ -62,6 +62,8 @@ export default {
   height: 47px;
   line-height: 47px;
 
+  width: 15rem;
+
   font-family: 'ProductSans Regular';
   font-size: 1.2rem;
 }
