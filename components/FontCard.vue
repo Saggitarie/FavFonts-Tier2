@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="fontcard__text">
-      <p>
+      <p :style="{ fontSize: getFontSize + 'px' }">
         A peep at some distant orb has power to raise and purify our thoughts
         like a strain of sacred music, or a noble picture, or a passage from the
         grander poets. It always does one good.
@@ -19,7 +19,12 @@
 </template>
 
 <script>
-export default {}
+import { mapGetters } from 'vuex'
+export default {
+  computed: {
+    ...mapGetters('fonts', ['getFontSize']),
+  },
+}
 </script>
 
 <style lang="scss" scoped>

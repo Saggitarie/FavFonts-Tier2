@@ -1,11 +1,13 @@
 const state = () => ({
   fontList: [],
   searchResult: [],
+  fontSize: '40',
 })
 
 const getters = {
   allFonts: (state) => state.fontList,
   allSearchResult: (state) => state.searchResult,
+  getFontSize: (state) => state.fontSize,
 }
 
 const mutations = {
