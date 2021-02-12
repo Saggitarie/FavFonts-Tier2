@@ -4,7 +4,7 @@
       <div class="slidecontainer">
         <input
           ref="input"
-          v-model="currentValue"
+          v-model="listenFontSize"
           type="range"
           :min="min"
           :max="max"
@@ -23,7 +23,7 @@ export default {
     value: {
       type: Number,
       required: true,
-      default: 40,
+      // default: 40,
     },
     min: {
       type: Number,
@@ -36,8 +36,19 @@ export default {
   },
   data() {
     return {
-      currentValue: this.value,
+      currentValue: this.$props.value,
     }
+  },
+  computed: {
+    // eslint-disable-next-line object-shorthand
+    listenFontSize: {
+      get() {
+        return this.value
+      },
+      set(fontSize) {
+        this.currentValue = fontSize
+      },
+    },
   },
   methods: {
     onInput() {
