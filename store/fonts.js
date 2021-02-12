@@ -14,6 +14,9 @@ const mutations = {
   setFonts: (state, fonts) => {
     state.fontList = fonts
   },
+  setFontSize: (state, fontSize) => {
+    state.fontSize = fontSize
+  },
 }
 
 const actions = {

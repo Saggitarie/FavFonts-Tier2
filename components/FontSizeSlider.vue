@@ -17,12 +17,13 @@
 </template>
 
 <script>
+// import { mapMutations } from 'vuex'
 export default {
   props: {
     value: {
-      type: String,
+      type: Number,
       required: true,
-      default: '40',
+      default: 40,
     },
     min: {
       type: Number,
@@ -38,11 +39,17 @@ export default {
       currentValue: this.value,
     }
   },
+  // watch: {
+  //   currentValue(val) {
+  //     this.setFontSize(val)
+  //   },
+  // },
   methods: {
     onInput() {
       // this.currentValue is a string because HTML is weird
       this.$emit('input', parseInt(this.currentValue))
     },
+    // ...mapMutations('fonts', ['setFontSize']),
   },
 }
 </script>

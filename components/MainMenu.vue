@@ -57,6 +57,7 @@
 </template>
 
 <script>
+import { mapGetters, mapMutations } from 'vuex'
 import SampleTextSelect from './SampleTextSelect'
 import FontSizeSelect from './FontSizeSelect'
 import FontSizeSlider from './FontSizeSlider'
@@ -77,10 +78,21 @@ export default {
   },
   data() {
     return {
-      number: '40',
+      number: 40,
       searchContext: '',
       typeAnythingContext: '',
     }
+  },
+  computed: {
+    ...mapGetters('fonts', ['getFontSize']),
+  },
+  watch: {
+    number(val) {
+      this.setFontSize(val.toString())
+    },
+  },
+  methods: {
+    ...mapMutations('fonts', ['setFontSize']),
   },
 }
 </script>
