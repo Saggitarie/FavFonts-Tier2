@@ -31,11 +31,6 @@ export default {
       type: Array,
       required: true,
     },
-    // default: {
-    //   type: Number,
-    //   required: false,
-    //   default: null,
-    // },
     tabindex: {
       type: Number,
       required: false,
