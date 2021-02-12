@@ -8,7 +8,6 @@
         v-for="(option, i) of options"
         :key="i"
         @click="
-          selected = option
           open = false
           $emit('input', option)
         "
@@ -26,6 +25,7 @@ export default {
     value: {
       type: Number,
       required: true,
+      default: this,
     },
     options: {
       type: Array,
@@ -44,19 +44,18 @@ export default {
   },
   data() {
     return {
-      selected: this.value
-        ? this.value
-        : this.options.length > 0
-        ? this.options[0]
-        : null,
       open: false,
     }
   },
   computed: {
     ...mapGetters('fonts', ['getFontSize']),
+    // eslint-disable-next-line object-shorthand
+    selected: function () {
+      return this.$props.value
+    },
   },
   mounted() {
-    this.$emit('input', this.selected)
+    this.$emit('input', parseInt(this.getFontSize))
   },
 }
 </script>
