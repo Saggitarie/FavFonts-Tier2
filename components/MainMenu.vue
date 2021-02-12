@@ -25,26 +25,13 @@
     <div class="mainmenu__font">
       <div class="mainmenu__font__select">
         <FontSizeSelect
-          :options="[
-            '8',
-            '12',
-            '14',
-            '20',
-            '24',
-            '32',
-            '40',
-            '64',
-            '96',
-            '120',
-            '184',
-            '280',
-          ]"
-          :default="'40'"
+          v-model="number"
+          :options="[8, 12, 14, 20, 24, 32, 40, 64, 96, 120, 184, 280]"
           class="select"
         />
       </div>
       <div class="mainmenu__font__slider">
-        <FontSizeSlider v-model="number" :min="0" :max="300" class="slider" />
+        <FontSizeSlider v-model="number" :min="8" :max="300" class="slider" />
       </div>
     </div>
     <div class="mainmenu__border"></div>
@@ -57,6 +44,7 @@
 </template>
 
 <script>
+import { mapGetters, mapMutations } from 'vuex'
 import SampleTextSelect from './SampleTextSelect'
 import FontSizeSelect from './FontSizeSelect'
 import FontSizeSlider from './FontSizeSlider'
@@ -77,10 +65,21 @@ export default {
   },
   data() {
     return {
-      number: '40',
+      number: 40,
       searchContext: '',
       typeAnythingContext: '',
     }
+  },
+  computed: {
+    ...mapGetters('fonts', ['getFontSize']),
+  },
+  watch: {
+    number(val) {
+      this.setFontSize(val.toString())
+    },
+  },
+  methods: {
+    ...mapMutations('fonts', ['setFontSize']),
   },
 }
 </script>

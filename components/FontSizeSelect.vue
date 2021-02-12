@@ -8,7 +8,6 @@
         v-for="(option, i) of options"
         :key="i"
         @click="
-          selected = option
           open = false
           $emit('input', option)
         "
@@ -20,17 +19,23 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   props: {
+    value: {
+      type: Number,
+      required: true,
+      default: this,
+    },
     options: {
       type: Array,
       required: true,
     },
-    default: {
-      type: String,
-      required: false,
-      default: null,
-    },
+    // default: {
+    //   type: Number,
+    //   required: false,
+    //   default: null,
+    // },
     tabindex: {
       type: Number,
       required: false,
@@ -39,16 +44,18 @@ export default {
   },
   data() {
     return {
-      selected: this.default
-        ? this.default
-        : this.options.length > 0
-        ? this.options[0]
-        : null,
       open: false,
     }
   },
+  computed: {
+    ...mapGetters('fonts', ['getFontSize']),
+    // eslint-disable-next-line object-shorthand
+    selected: function () {
+      return this.$props.value
+    },
+  },
   mounted() {
-    this.$emit('input', this.selected)
+    this.$emit('input', parseInt(this.getFontSize))
   },
 }
 </script>

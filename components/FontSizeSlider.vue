@@ -17,12 +17,13 @@
 </template>
 
 <script>
+// import { mapMutations } from 'vuex'
 export default {
   props: {
     value: {
-      type: String,
+      type: Number,
       required: true,
-      default: '40',
+      default: 40,
     },
     min: {
       type: Number,
