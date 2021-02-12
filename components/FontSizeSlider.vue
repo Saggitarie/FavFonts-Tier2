@@ -39,17 +39,11 @@ export default {
       currentValue: this.value,
     }
   },
-  // watch: {
-  //   currentValue(val) {
-  //     this.setFontSize(val)
-  //   },
-  // },
   methods: {
     onInput() {
       // this.currentValue is a string because HTML is weird
       this.$emit('input', parseInt(this.currentValue))
     },
-    // ...mapMutations('fonts', ['setFontSize']),
   },
 }
 </script>

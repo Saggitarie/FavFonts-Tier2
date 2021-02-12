@@ -20,17 +20,22 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   props: {
+    value: {
+      type: Number,
+      required: true,
+    },
     options: {
       type: Array,
       required: true,
     },
-    default: {
-      type: String,
-      required: false,
-      default: null,
-    },
+    // default: {
+    //   type: Number,
+    //   required: false,
+    //   default: null,
+    // },
     tabindex: {
       type: Number,
       required: false,
@@ -39,13 +44,16 @@ export default {
   },
   data() {
     return {
-      selected: this.default
-        ? this.default
+      selected: this.value
+        ? this.value
         : this.options.length > 0
         ? this.options[0]
         : null,
       open: false,
     }
+  },
+  computed: {
+    ...mapGetters('fonts', ['getFontSize']),
   },
   mounted() {
     this.$emit('input', this.selected)
