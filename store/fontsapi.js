@@ -18,31 +18,32 @@ const actions = {
       `https://www.googleapis.com/webfonts/v1/webfonts?sort=trending&key=${process.env.GOOGLE_FONTS_API_KEY}`
     )
 
-    // console.log('Response Reuslt', res.items)
-
     commit('setFonts', res.items)
     dispatch('fontssearch/setSearchList', res.items, { root: true })
   },
-  async fetchPopularFonts({ commit }) {
+  async fetchPopularFonts({ commit, dispatch }) {
     const res = await this.$axios.$get(
       `https://www.googleapis.com/webfonts/v1/webfonts?sort=popularity&key=${process.env.GOOGLE_FONTS_API_KEY}`
     )
 
-    commit('setFonts', res)
+    commit('setFonts', res.items)
+    dispatch('fontssearch/setSearchList', res.items, { root: true })
   },
-  async fetchRecentFonts({ commit }) {
+  async fetchRecentFonts({ commit, dispatch }) {
     const res = await this.$axios.$get(
       `https://www.googleapis.com/webfonts/v1/webfonts?sort=date&key=${process.env.GOOGLE_FONTS_API_KEY}`
     )
 
-    commit('setFonts', res)
+    commit('setFonts', res.items)
+    dispatch('fontssearch/setSearchList', res.items, { root: true })
   },
-  async fetchInAscendingOrderFonts({ commit }) {
+  async fetchInAscendingOrderFonts({ commit, dispatch }) {
     const res = await this.$axios.$get(
       `https://www.googleapis.com/webfonts/v1/webfonts?sort=alpha&key=${process.env.GOOGLE_FONTS_API_KEY}`
     )
 
-    commit('setFonts', res)
+    commit('setFonts', res.items)
+    dispatch('fontssearch/setSearchList', res.items, { root: true })
   },
 }
 

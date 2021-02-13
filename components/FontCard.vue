@@ -2,10 +2,10 @@
   <section class="fontcard">
     <div class="fontcard__title">
       <div class="fontcard__title--left">
-        <p>Roboto</p>
+        <p>{{ fontfamilyname }}</p>
       </div>
       <div class="fontcard__title--right">
-        <p>12<span>styles</span></p>
+        <p>{{ styleArr.length }}<span>styles</span></p>
       </div>
     </div>
     <div class="fontcard__text">
@@ -21,6 +21,18 @@
 <script>
 import { mapGetters } from 'vuex'
 export default {
+  props: {
+    fontfamilyname: {
+      type: String,
+      require: true,
+      default: '',
+    },
+    styleArr: {
+      type: Array,
+      require: true,
+      default: () => [], // Create a factory function for default array
+    },
+  },
   computed: {
     ...mapGetters('fontssize', ['getFontSize']),
   },

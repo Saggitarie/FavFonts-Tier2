@@ -1,7 +1,7 @@
 <template>
   <div class="fontcardgroup">
     <div v-for="font in getTenFonts" :key="font.family">
-      <FontCard />
+      <FontCard :fontfamilyname="font.family" :style-arr="font.variants" />
     </div>
   </div>
 </template>
