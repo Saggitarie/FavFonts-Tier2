@@ -42,7 +42,6 @@ export default {
   },
   computed: {
     selected() {
-      console.log(this.$props.value)
       return this.$props.value
     },
   },

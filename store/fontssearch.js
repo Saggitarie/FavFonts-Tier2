@@ -8,11 +8,16 @@ const getters = {
 
 const mutations = {
   setSearchResult: (state, fontList) => {
-    state.fontSize = fontList
+    state.searchResult = fontList
   },
 }
 
-const actions = {}
+const actions = {
+  setSearchList({ commit }, payload) {
+    // console.log('Reached Inside FontsSearch', payload)
+    commit('setSearchResult', payload)
+  },
+}
 
 module.exports = {
   state,

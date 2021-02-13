@@ -13,12 +13,13 @@ const mutations = {
 }
 
 const actions = {
-  async fetchTrendingFonts({ commit }) {
+  async fetchTrendingFonts({ commit, dispatch }) {
     const res = await this.$axios.$get(
       `https://www.googleapis.com/webfonts/v1/webfonts?sort=trending&key=${process.env.GOOGLE_FONTS_API_KEY}`
     )
 
     commit('setFonts', res)
+    dispatch('fontssearch/setSearchList', res, { root: true })
   },
   async fetchPopularFonts({ commit }) {
     const res = await this.$axios.$get(
