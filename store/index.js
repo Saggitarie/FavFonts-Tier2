@@ -1,10 +1,10 @@
 const state = () => ({
-  counter: 0,
+  dummy: 0,
 })
 
 const mutations = {
   increment(state) {
-    state.counter++
+    state.dummy++
   },
 }
 
