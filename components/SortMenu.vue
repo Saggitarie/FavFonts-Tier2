@@ -6,8 +6,8 @@
     <div class="sortmenu--right">
       <div class="sortmenu--right__select">
         <SortBySelect
+          v-model="sortByOption"
           :options="['Trending', 'Most Popular', 'Newest', 'Name']"
-          :default="'Trending'"
           class="select"
         />
       </div>
@@ -25,6 +25,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import SortBySelect from './SortBySelect'
 
 import ColumnIcon from '~/assets/images/svg/ColumnIcon.svg?inline'
@@ -34,6 +35,38 @@ export default {
     SortBySelect,
     ColumnIcon,
     GridIcon,
+  },
+  data() {
+    return {
+      sortByOption: 'Trending',
+    }
+  },
+  watch: {
+    sortByOption(option) {
+      if (option === 'Trending') {
+        this.fetchTrendingFonts()
+      } else if (option === 'Most Popular') {
+        this.fetchPopularFonts()
+      } else if (option === 'Newest') {
+        this.fetchRecentFonts()
+      } else {
+        this.fetchInAscendingOrderFonts()
+      }
+    },
+  },
+  methods: {
+    ...mapActions('fontsapi', {
+      fetchTrendingFonts: 'fetchTrendingFonts',
+    }),
+    ...mapActions('fontsapi', {
+      fetchPopularFonts: 'fetchPopularFonts',
+    }),
+    ...mapActions('fontsapi', {
+      fetchRecentFonts: 'fetchRecentFonts',
+    }),
+    ...mapActions('fontsapi', {
+      fetchInAscendingOrderFonts: 'fetchInAscendingOrderFonts',
+    }),
   },
 }
 </script>

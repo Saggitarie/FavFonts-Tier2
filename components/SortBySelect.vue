@@ -8,7 +8,6 @@
         v-for="(option, i) of options"
         :key="i"
         @click="
-          selected = option
           open = false
           $emit('input', option)
         "
@@ -22,14 +21,13 @@
 <script>
 export default {
   props: {
+    value: {
+      type: String,
+      required: true,
+    },
     options: {
       type: Array,
       required: true,
-    },
-    default: {
-      type: String,
-      required: false,
-      default: null,
     },
     tabindex: {
       type: Number,
@@ -39,13 +37,14 @@ export default {
   },
   data() {
     return {
-      selected: this.default
-        ? this.default
-        : this.options.length > 0
-        ? this.options[0]
-        : null,
       open: false,
     }
+  },
+  computed: {
+    selected() {
+      console.log(this.$props.value)
+      return this.$props.value
+    },
   },
   mounted() {
     this.$emit('input', this.selected)

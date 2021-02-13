@@ -13,9 +13,30 @@ const mutations = {
 }
 
 const actions = {
-  async fetchAllFonts({ commit }) {
+  async fetchTrendingFonts({ commit }) {
+    const res = await this.$axios.$get(
+      `https://www.googleapis.com/webfonts/v1/webfonts?sort=trending&key=${process.env.GOOGLE_FONTS_API_KEY}`
+    )
+
+    commit('setFonts', res)
+  },
+  async fetchPopularFonts({ commit }) {
     const res = await this.$axios.$get(
       `https://www.googleapis.com/webfonts/v1/webfonts?sort=popularity&key=${process.env.GOOGLE_FONTS_API_KEY}`
+    )
+
+    commit('setFonts', res)
+  },
+  async fetchRecentFonts({ commit }) {
+    const res = await this.$axios.$get(
+      `https://www.googleapis.com/webfonts/v1/webfonts?sort=date&key=${process.env.GOOGLE_FONTS_API_KEY}`
+    )
+
+    commit('setFonts', res)
+  },
+  async fetchInAscendingOrderFonts({ commit }) {
+    const res = await this.$axios.$get(
+      `https://www.googleapis.com/webfonts/v1/webfonts?sort=alpha&key=${process.env.GOOGLE_FONTS_API_KEY}`
     )
 
     commit('setFonts', res)

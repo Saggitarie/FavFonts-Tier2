@@ -37,7 +37,7 @@ export default {
   },
   methods: {
     ...mapActions('fontsapi', {
-      fetchAllFonts: 'fetchAllFonts',
+      fetchAllFonts: 'fetchTrendingFonts',
     }),
   },
 }
