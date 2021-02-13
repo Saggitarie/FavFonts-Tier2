@@ -43,7 +43,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('fonts', ['getFontSize']),
+    ...mapGetters('fontssize', ['getFontSize']),
     // eslint-disable-next-line object-shorthand
     selected: function () {
       return this.$props.value
