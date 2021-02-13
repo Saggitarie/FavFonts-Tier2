@@ -1,16 +1,20 @@
 <template>
   <div class="fontcardgroup">
-    <FontCard />
-    <FontCard />
-    <FontCard />
+    <div v-for="font in getTenFonts" :key="font.family">
+      <FontCard />
+    </div>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import FontCard from './FontCard'
 export default {
   components: {
     FontCard,
+  },
+  computed: {
+    ...mapGetters('fontssearch', ['getTenFonts']),
   },
 }
 </script>
