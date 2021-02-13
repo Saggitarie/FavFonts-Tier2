@@ -71,7 +71,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('fonts', ['getFontSize']),
+    ...mapGetters('fontssize', ['getFontSize']),
   },
   watch: {
     number(val) {
@@ -79,7 +79,7 @@ export default {
     },
   },
   methods: {
-    ...mapMutations('fonts', ['setFontSize']),
+    ...mapMutations('fontssize', ['setFontSize']),
   },
 }
 </script>

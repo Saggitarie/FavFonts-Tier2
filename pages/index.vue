@@ -36,7 +36,7 @@ export default {
     })
   },
   methods: {
-    ...mapActions('fonts', {
+    ...mapActions('fontsapi', {
       fetchAllFonts: 'fetchAllFonts',
     }),
   },
