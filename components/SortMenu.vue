@@ -1,7 +1,7 @@
 <template>
   <div class="sortmenu u-margin-bottom-medium">
     <div class="sortmenu--left">
-      <p>1030 of 1030 families</p>
+      <p>{{ getMatchFonts.length }} of {{ getAllFonts.length }} families</p>
     </div>
     <div class="sortmenu--right">
       <div class="sortmenu--right__select">
@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import SortBySelect from './SortBySelect'
 
 import ColumnIcon from '~/assets/images/svg/ColumnIcon.svg?inline'
@@ -40,6 +40,10 @@ export default {
     return {
       sortByOption: 'Trending',
     }
+  },
+  computed: {
+    ...mapGetters('fontssearch', ['getMatchFonts']),
+    ...mapGetters('fontsapi', ['getAllFonts']),
   },
   watch: {
     sortByOption(option) {
