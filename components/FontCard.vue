@@ -10,9 +10,7 @@
     </div>
     <div class="fontcard__text">
       <p :style="{ fontSize: getFontSize + 'px' }">
-        A peep at some distant orb has power to raise and purify our thoughts
-        like a strain of sacred music, or a noble picture, or a passage from the
-        grander poets. It always does one good.
+        {{ getSampleInput }}
       </p>
     </div>
   </section>
@@ -35,6 +33,7 @@ export default {
   },
   computed: {
     ...mapGetters('fontssize', ['getFontSize']),
+    ...mapGetters('fontstypeanything', ['getSampleInput']),
   },
 }
 </script>

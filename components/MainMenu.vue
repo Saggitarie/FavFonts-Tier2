@@ -80,10 +80,14 @@ export default {
     searchContext(val) {
       this.setSearchInput(val.toString())
     },
+    typeAnythingContext(val) {
+      this.setTypeInput(val.toString())
+    },
   },
   methods: {
     ...mapMutations('fontssize', ['setFontSize']),
     ...mapMutations('fontssearch', ['setSearchInput']),
+    ...mapMutations('fontstypeanything', ['setTypeInput']),
   },
 }
 </script>
