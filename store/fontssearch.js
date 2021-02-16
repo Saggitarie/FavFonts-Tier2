@@ -10,7 +10,7 @@ const getters = {
     return firstTenArr
   },
   getMatchFonts: (state) => {
-    const target = state.searchInput.toLowerCase()
+    const target = state.searchInput.toLowerCase().trim()
 
     if (!target) return state.searchResult
 
