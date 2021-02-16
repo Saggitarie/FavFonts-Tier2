@@ -1,5 +1,5 @@
 const state = () => ({
-  fontSize: '40',
+  fontSize: '32',
 })
 
 const getters = {

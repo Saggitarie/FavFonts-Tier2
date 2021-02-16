@@ -14,7 +14,7 @@ export default {
     FontCard,
   },
   computed: {
-    ...mapGetters('fontssearch', ['getTenFonts']),
+    ...mapGetters('fontssearch', ['getTenFonts', 'getMatchFonts']),
   },
 }
 </script>
