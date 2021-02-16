@@ -77,9 +77,13 @@ export default {
     number(val) {
       this.setFontSize(val.toString())
     },
+    searchContext(val) {
+      this.setSearchInput(val.toString())
+    },
   },
   methods: {
     ...mapMutations('fontssize', ['setFontSize']),
+    ...mapMutations('fontssearch', ['setSearchInput']),
   },
 }
 </script>
