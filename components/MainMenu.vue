@@ -70,7 +70,6 @@ export default {
       searchContext: '',
       typeAnythingContext: '',
       selectedOption: 'Custom',
-      trigger: false,
     }
   },
   computed: {
