@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="fontcard__text">
-      <p :style="{ fontSize: getFontSize + 'px' }">
+      <p :style="{ fontSize: getFontSize + 'px', fontFamily: fontfamilyname }">
         {{ getSampleInput }}
       </p>
     </div>
