@@ -5,9 +5,9 @@ const state = () => ({
 
 const getters = {
   getSearchResult: (state) => state.searchResult,
-  getTenFonts: (state, getters) => {
-    const firstTwentyArr = getters.getMatchFonts.slice(0, 10)
-    return firstTwentyArr
+  getHundredFonts: (state, getters) => {
+    const firstHundredArr = getters.getMatchFonts.slice(0, 100)
+    return firstHundredArr
   },
   getMatchFonts: (state) => {
     const target = state.searchInput.toLowerCase().trim()

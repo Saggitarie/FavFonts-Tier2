@@ -1,6 +1,6 @@
 <template>
   <div class="fontcardgroup">
-    <div v-for="font in getTenFonts" :key="font.family">
+    <div v-for="font in getHundredFonts" :key="font.family">
       <FontCard :fontfamilyname="font.family" :style-arr="font.variants" />
     </div>
   </div>
@@ -14,7 +14,7 @@ export default {
     FontCard,
   },
   computed: {
-    ...mapGetters('fontssearch', ['getTenFonts', 'getMatchFonts']),
+    ...mapGetters('fontssearch', ['getHundredFonts']),
   },
 }
 </script>

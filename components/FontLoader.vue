@@ -12,7 +12,7 @@ if (process.browser) {
 export default {
   computed: {
     fontsList() {
-      return this.$store.getters['fontssearch/getTenFonts']
+      return this.$store.getters['fontssearch/getHundredFonts']
     },
     // ...mapGetters('fontssearch', ['getTenFonts']),
   },
