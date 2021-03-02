@@ -12,7 +12,6 @@
     <div class="mainmenu__type">
       <div class="mainmenu__type__select">
         <SampleTextSelect
-          :key="trigger"
           v-model="selectedOption"
           :options="['Custom', 'Sentence', 'Alphabet', 'Paragraph', 'Numerals']"
           class="select"
@@ -84,7 +83,7 @@ export default {
     },
     typeAnythingContext(val) {
       this.setSampleTextOption('Custom')
-      this.trigger = !this.trigger
+      // this.trigger = !this.trigger
       this.setTypeInput(val.toString())
     },
     selectedOption(val) {
