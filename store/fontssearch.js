@@ -5,8 +5,8 @@ const state = () => ({
 
 const getters = {
   getSearchResult: (state) => state.searchResult,
-  getTenFonts: (state) => {
-    const firstTwentyArr = state.searchResult.slice(0, 20)
+  getTenFonts: (state, getters) => {
+    const firstTwentyArr = getters.getMatchFonts.slice(0, 10)
     return firstTwentyArr
   },
   getMatchFonts: (state) => {
