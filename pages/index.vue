@@ -1,10 +1,10 @@
 <template>
   <div class="container">
     <div>
-      <NavigationMenu />
       <client-only>
         <font-loader />
       </client-only>
+      <NavigationMenu />
       <MainMenu />
       <SortMenu />
       <FontCardGroup />

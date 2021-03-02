@@ -3,34 +3,37 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 let WebFontLoader = ''
 if (process.browser) {
   WebFontLoader = require('webfontloader')
 }
 
 export default {
-  created() {
-    WebFontLoader.load({
-      google: {
-        families: [
-          'Akaya Telivigala',
-          'DotGothic16',
-          'RocknRoll One',
-          'Stick',
-          'Shippori Mincho',
-          'Shippori Mincho B1',
-          'Akaya Kanadaka',
-          'Oi',
-          'Newsreader',
-          'Ballet',
-        ],
-      },
-    })
+  computed: {
+    fontsList() {
+      return this.$store.getters['fontssearch/getTenFonts']
+    },
+    // ...mapGetters('fontssearch', ['getTenFonts']),
+  },
+  watch: {
+    fontsList(valArr, old) {
+      const fontsArr = valArr.map((font) => font.family)
+
+      WebFontLoader.load({
+        google: {
+          families: fontsArr,
+        },
+      })
+    },
   },
   methods: {
     setFontLoaded() {
       this.$emit('font-loaded')
     },
+    ...mapActions('fontsapi', {
+      fetchAllFonts: 'fetchTrendingFonts',
+    }),
   },
 }
 </script>

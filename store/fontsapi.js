@@ -18,10 +18,6 @@ const actions = {
       `https://www.googleapis.com/webfonts/v1/webfonts?sort=trending&key=${process.env.GOOGLE_FONTS_API_KEY}`
     )
 
-    // const familyArr = res.items.map((el) => {
-    //   return el.family
-    // })
-
     commit('setFonts', res.items)
     dispatch('fontssearch/setSearchList', res.items, { root: true })
   },
@@ -30,36 +26,24 @@ const actions = {
       `https://www.googleapis.com/webfonts/v1/webfonts?sort=popularity&key=${process.env.GOOGLE_FONTS_API_KEY}`
     )
 
-    const familyArr = res.items.map((el) => {
-      return el.family
-    })
-
-    commit('setFonts', familyArr)
-    dispatch('fontssearch/setSearchList', familyArr, { root: true })
+    commit('setFonts', res.items)
+    dispatch('fontssearch/setSearchList', res.items, { root: true })
   },
   async fetchRecentFonts({ commit, dispatch }) {
     const res = await this.$axios.$get(
       `https://www.googleapis.com/webfonts/v1/webfonts?sort=date&key=${process.env.GOOGLE_FONTS_API_KEY}`
     )
 
-    const familyArr = res.items.map((el) => {
-      return el.family
-    })
-
-    commit('setFonts', familyArr)
-    dispatch('fontssearch/setSearchList', familyArr, { root: true })
+    commit('setFonts', res.items)
+    dispatch('fontssearch/setSearchList', res.items, { root: true })
   },
   async fetchInAscendingOrderFonts({ commit, dispatch }) {
     const res = await this.$axios.$get(
       `https://www.googleapis.com/webfonts/v1/webfonts?sort=alpha&key=${process.env.GOOGLE_FONTS_API_KEY}`
     )
 
-    const familyArr = res.items.map((el) => {
-      return el.family
-    })
-
-    commit('setFonts', familyArr)
-    dispatch('fontssearch/setSearchList', familyArr, { root: true })
+    commit('setFonts', res.items)
+    dispatch('fontssearch/setSearchList', res.items, { root: true })
   },
 }
 
