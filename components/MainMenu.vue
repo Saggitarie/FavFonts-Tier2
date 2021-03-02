@@ -12,8 +12,8 @@
     <div class="mainmenu__type">
       <div class="mainmenu__type__select">
         <SampleTextSelect
+          v-model="selectedOption"
           :options="['Custom', 'Sentence', 'Alphabet', 'Paragraph', 'Numerals']"
-          :default="'Sentence'"
           class="select"
         />
       </div>
@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import { mapGetters, mapMutations } from 'vuex'
+import { mapGetters, mapMutations, mapActions } from 'vuex'
 import SampleTextSelect from './SampleTextSelect'
 import FontSizeSelect from './FontSizeSelect'
 import FontSizeSlider from './FontSizeSlider'
@@ -68,6 +68,7 @@ export default {
       number: 40,
       searchContext: '',
       typeAnythingContext: '',
+      selectedOption: 'Custom',
     }
   },
   computed: {
@@ -80,10 +81,24 @@ export default {
     searchContext(val) {
       this.setSearchInput(val.toString())
     },
+    typeAnythingContext(val) {
+      this.setSampleTextOption('Custom')
+      // this.trigger = !this.trigger
+      this.setTypeInput(val.toString())
+    },
+    selectedOption(val) {
+      this.setSampleTextOption(val.toString())
+      this.setAppropriateSample(val.toString())
+    },
   },
   methods: {
     ...mapMutations('fontssize', ['setFontSize']),
     ...mapMutations('fontssearch', ['setSearchInput']),
+    ...mapMutations('fontstypeanything', [
+      'setTypeInput',
+      'setSampleTextOption',
+    ]),
+    ...mapActions('fontstypeanything', ['setAppropriateSample']),
   },
 }
 </script>

@@ -1,6 +1,9 @@
 <template>
   <div class="container">
     <div>
+      <client-only>
+        <font-loader />
+      </client-only>
       <NavigationMenu />
       <MainMenu />
       <SortMenu />
@@ -16,6 +19,7 @@ import NavigationMenu from '../components/NavigationMenu'
 import FontCardGroup from '../components/FontCardGroup'
 import MainMenu from '../components/MainMenu'
 import SortMenu from '../components/SortMenu'
+// import FontLoader from '../components/FontLoader'
 // import SearchIcon from '~/assets/images/svg/SearchIcon.svg?inline'
 
 export default {
@@ -24,6 +28,7 @@ export default {
     FontCardGroup,
     MainMenu,
     SortMenu,
+    // FontLoader,
   },
   data() {
     return {

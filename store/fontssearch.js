@@ -6,11 +6,11 @@ const state = () => ({
 const getters = {
   getSearchResult: (state) => state.searchResult,
   getTenFonts: (state) => {
-    const firstTenArr = state.searchResult.slice(0, 10)
-    return firstTenArr
+    const firstTwentyArr = state.searchResult.slice(0, 20)
+    return firstTwentyArr
   },
   getMatchFonts: (state) => {
-    const target = state.searchInput.toLowerCase()
+    const target = state.searchInput.toLowerCase().trim()
 
     if (!target) return state.searchResult
 
@@ -33,7 +33,6 @@ const mutations = {
 
 const actions = {
   setSearchList({ commit }, payload) {
-    // console.log('Reached Inside FontsSearch', payload)
     commit('setSearchResult', payload)
   },
 }
