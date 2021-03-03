@@ -13,11 +13,25 @@
       </div>
       <div class="sortmenu--right__icon">
         <div class="sortmenu--right__icon__grid">
-          <GridIcon />
+          <GridIcon
+            :class="
+              getIsGridStatus
+                ? 'sortmenu--right__icon__grid--active'
+                : 'sortmenu--right__icon__grid--inactive'
+            "
+            @click="toggleIsGridStatus"
+          />
         </div>
         <div class="sortmenu--right__icon__border"></div>
         <div class="sortmenu--right__icon__column">
-          <ColumnIcon />
+          <ColumnIcon
+            :class="
+              getIsGridStatus
+                ? 'sortmenu--right__icon__column--inactive'
+                : 'sortmenu--right__icon__column--active'
+            "
+            @click="toggleIsColumnStatus"
+          />
         </div>
       </div>
     </div>
@@ -25,7 +39,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
+import { mapGetters, mapActions, mapMutations } from 'vuex'
 import SortBySelect from './SortBySelect'
 
 import ColumnIcon from '~/assets/images/svg/ColumnIcon.svg?inline'
@@ -44,6 +58,7 @@ export default {
   computed: {
     ...mapGetters('fontssearch', ['getMatchFonts']),
     ...mapGetters('fontsapi', ['getAllFonts']),
+    ...mapGetters('fontscustom', ['getIsGridStatus']),
   },
   watch: {
     sortByOption(option) {
@@ -70,6 +85,12 @@ export default {
     }),
     ...mapActions('fontsapi', {
       fetchInAscendingOrderFonts: 'fetchInAscendingOrderFonts',
+    }),
+    ...mapMutations('fontscustom', {
+      toggleIsGridStatus: 'toggleIsGridStatus',
+    }),
+    ...mapMutations('fontscustom', {
+      toggleIsColumnStatus: 'toggleIsColumnStatus',
     }),
   },
 }
@@ -118,6 +139,17 @@ export default {
       &__grid {
         flex: 1;
         cursor: pointer;
+
+        &--active {
+          fill: $color-navigation-active;
+
+          &:hover {
+            fill: $color-navigation-dark-font;
+          }
+        }
+
+        &--inactive {
+        }
       }
 
       &__border {
@@ -132,6 +164,17 @@ export default {
       &__column {
         flex: 1;
         cursor: pointer;
+
+        &--active {
+          fill: $color-navigation-active;
+
+          &:hover {
+            fill: $color-navigation-dark-font;
+          }
+        }
+
+        &--inactive {
+        }
       }
     }
   }
