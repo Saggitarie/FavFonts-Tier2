@@ -15,7 +15,13 @@ const mutations = {
   },
 }
 
-const actions = {}
+const actions = {
+  resetSettings({ dispatch }) {
+    dispatch('fontsapi/fetchTrendingFonts', { root: true })
+    dispatch('fontssearch/setSearchList', '', { root: true })
+    dispatch('fontssize/resetFontSize', '32', { root: true })
+  },
+}
 
 module.exports = {
   state,
