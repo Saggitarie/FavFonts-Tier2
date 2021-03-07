@@ -17,8 +17,8 @@ const mutations = {
 
 const actions = {
   resetSettings({ dispatch }) {
-    dispatch('fontsapi/fetchTrendingFonts', { root: true })
-    dispatch('fontssearch/setSearchList', '', { root: true })
+    // dispatch('fontsapi/fetchTrendingFonts', { root: true })
+    dispatch('fontssearch/resetSearchInput', '', { root: true })
     dispatch('fontssize/resetFontSize', '32', { root: true })
   },
 }

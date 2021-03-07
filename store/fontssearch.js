@@ -35,6 +35,9 @@ const actions = {
   setSearchList({ commit }, payload) {
     commit('setSearchResult', payload)
   },
+  resetSearchInput({ commit }, payload) {
+    commit('setSearchInput', payload)
+  },
 }
 
 module.exports = {
