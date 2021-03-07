@@ -40,8 +40,8 @@ export default {
 
 <style lang="scss" scoped>
 .fontcard {
-  // width: 370.66px;
-  height: 349px;
+  min-height: 450px;
+  // max-height: 450px;
 
   font-family: 'Roboto Regular';
 
