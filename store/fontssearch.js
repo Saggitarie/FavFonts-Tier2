@@ -5,9 +5,9 @@ const state = () => ({
 
 const getters = {
   getSearchResult: (state) => state.searchResult,
-  getTenFonts: (state) => {
-    const firstTwentyArr = state.searchResult.slice(0, 20)
-    return firstTwentyArr
+  getHundredFonts: (state, getters) => {
+    const firstHundredArr = getters.getMatchFonts.slice(0, 100)
+    return firstHundredArr
   },
   getMatchFonts: (state) => {
     const target = state.searchInput.toLowerCase().trim()
@@ -34,6 +34,9 @@ const mutations = {
 const actions = {
   setSearchList({ commit }, payload) {
     commit('setSearchResult', payload)
+  },
+  resetSearchInput({ commit }, payload) {
+    commit('setSearchInput', payload)
   },
 }
 

@@ -37,7 +37,7 @@
     <div class="mainmenu__border"></div>
     <div class="mainmenu__reset">
       <div class="mainmenu__reset__icon">
-        <ResetIcon class="mainmenu__reset__iconitself" />
+        <ResetIcon class="mainmenu__reset__iconitself" @click="resetSettings" />
       </div>
     </div>
   </div>
@@ -98,6 +98,7 @@ export default {
       'setTypeInput',
       'setSampleTextOption',
     ]),
+    ...mapActions('fontscustom', ['resetSettings']),
     ...mapActions('fontstypeanything', ['setAppropriateSample']),
   },
 }

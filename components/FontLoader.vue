@@ -12,7 +12,7 @@ if (process.browser) {
 export default {
   computed: {
     fontsList() {
-      return this.$store.getters['fontssearch/getTenFonts']
+      return this.$store.getters['fontssearch/getHundredFonts']
     },
     // ...mapGetters('fontssearch', ['getTenFonts']),
   },
@@ -20,11 +20,13 @@ export default {
     fontsList(valArr, old) {
       const fontsArr = valArr.map((font) => font.family)
 
-      WebFontLoader.load({
-        google: {
-          families: fontsArr,
-        },
-      })
+      if (fontsArr.length !== 0) {
+        WebFontLoader.load({
+          google: {
+            families: fontsArr,
+          },
+        })
+      }
     },
   },
   methods: {

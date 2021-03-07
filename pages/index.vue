@@ -3,7 +3,9 @@
     <div>
       <client-only>
         <font-loader />
+        <ScrollTopArrow></ScrollTopArrow>
       </client-only>
+
       <NavigationMenu />
       <MainMenu />
       <SortMenu />
@@ -19,6 +21,7 @@ import NavigationMenu from '../components/NavigationMenu'
 import FontCardGroup from '../components/FontCardGroup'
 import MainMenu from '../components/MainMenu'
 import SortMenu from '../components/SortMenu'
+import ScrollTopArrow from '../components/ScrollToTop'
 // import FontLoader from '../components/FontLoader'
 // import SearchIcon from '~/assets/images/svg/SearchIcon.svg?inline'
 
@@ -28,6 +31,7 @@ export default {
     FontCardGroup,
     MainMenu,
     SortMenu,
+    ScrollTopArrow,
     // FontLoader,
   },
   data() {

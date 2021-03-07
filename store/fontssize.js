@@ -12,7 +12,11 @@ const mutations = {
   },
 }
 
-const actions = {}
+const actions = {
+  resetFontSize: ({ commit }, payload) => {
+    commit('setFontSize', payload)
+  },
+}
 
 module.exports = {
   state,
