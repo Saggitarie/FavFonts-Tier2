@@ -1,6 +1,6 @@
 <template>
   <div :class="getIsGridStatus ? 'fontcardgroup' : 'fontcardgroup--column'">
-    <div v-for="font in getHundredFonts" :key="font.family">
+    <div v-for="font in getMatchFonts" :key="font.family">
       <FontCard :fontfamilyname="font.family" :style-arr="font.variants" />
     </div>
   </div>
@@ -14,7 +14,7 @@ export default {
     FontCard,
   },
   computed: {
-    ...mapGetters('fontssearch', ['getHundredFonts']),
+    ...mapGetters('fontssearch', ['getHundredFonts', 'getMatchFonts']),
     ...mapGetters('fontscustom', ['getIsGridStatus']),
   },
 }
